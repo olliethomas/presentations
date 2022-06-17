@@ -1,40 +1,293 @@
-<!doctype html>
-<html lang="en-us">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!DOCTYPE html>
+<html lang="en">
+  <title>Oliver Thomas Thesis</title>
 
-		<title>reveal.js</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script src="custom_themes/html_elements.js"></script>
+  <link rel="stylesheet" href="dist/reveal.css">
+  <link rel="stylesheet" href="custom_themes/sussex2.css" id="theme">
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+  <div class="reveal">
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <div class="slides">
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+      <div id="background-template">
+        <footer>
+          <p>Thesis Overview
+        </footer>
+      </div>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
-</html>
+      <section class="dark-cyan">
+        <p>&nbsp;
+        <h2>Thesis Overview</h2>
+        <p>&nbsp;
+        <h3>Oliver Thomas</h3>
+        <p>&nbsp;
+        <p style="color: white">Predictive Analytics Lab<br>
+          University of Sussex
+        <p><img src="images/logos/University_of_Sussex_Logo.svg2000_white.png" style="width: 5rem;">
+      </section>
+
+      <section>
+        <h2>Contents</h2>
+        <ol type="1">
+          <li>Background
+            <ol style="list-style-type: lower-alpha">
+              <li>Fair Machine Learning</li>
+              <li>Fair Representations</li>
+            </ol>
+          </li>
+          <li>Chapters
+            <ol style="list-style-type: lower-alpha">
+              <li>A Novel Use-case for Fair Representations</li>
+              <li>Fair Representations in the Data Domain</li>
+              <li>One Step Further</li>
+            </ol>
+          </li>
+          <li>Conclusion</li>
+        </ol>
+      </section>
+
+      <section class="dark-cyan">
+        <p>&nbsp;
+        <p>&nbsp;
+        <p>&nbsp;
+        <p>&nbsp;
+        <h2>Background</h2>
+      </section>
+
+      <section>
+
+        As ML becomes more capable, it's outcomes are becoming more consequential...
+
+        Wrongfully Accused by an Algorithm
+
+        Wrongfully Accused by an Algorithm
+
+        Police officers raise concerns about 'biased' AI data
+
+        <aside class="notes">
+          Machine Learning is a tool that is growing in popularity. There have been a number of high profile successes, and new applications are being regularly identified. These applications include translation (in both image and natural-language domains), pattern recognition and decision-making. Contexts for these applications include Geology, Meteorology, Sports forecasting and Agriculture, to name a few.
+
+          Because of this success there is a desire to incorporate these systems in more and more situations, including those directly applicable to people. For example, Machine Learning systems have already been applied to police allocation, recidivism prediction, candidate screening and credit approval.
+
+          On top of the benefits of automated decision making (speed, scale, etc) there is an additional promise to automated decisions. The promise is that instead of many human decision makers, each one biased with their own prejudices, heuristics and experience, we can have a uniform approach. The hope is that by treating everybody the same, then unequal, biased behaviour can be removed.
+
+          Unfortunately, that's not always the case.
+
+          Recent headlines include:
+
+          Wrongfully Accused by an Algorithm: In what may be the first known case of its kind, a faulty facial recognition match led to a Michigan man’s arrest for a crime he did not commit. -- NYTimes {cite}Hill20
+          Wrongfully Accused by an Algorithm. -- The Guardian {cite}Reu18
+          Police officers raise concerns about 'biased' AI data. -- BBC News {cite}BBC19
+          But how does this happen? A prediction model has to be designed and there are a number of legal and moral obstacles to prevent a group/individual from purposefully designing a biased system. However, even for the best intentioned there are a number of potential problems. Examples of these problems include (but are not limited to):
+
+          The tyranny of the majority: We optimise to be right for the many, at the expense of minority groups.
+          Sampling bias: We don't have representative data of our population.
+          Proxy labels: We don't (or can't) measure what we truly want to measure, so use a related quality as a proxy.
+          Biased data: The recorded human decision was just plain biased.
+          And unfortunately these aren't mutually exclusive.
+
+          An unconstrained machine learning model is susceptible to all of these problems. To face this challenge, the machine learning community has focused on creating a class of learning models that are constrained to exhibit less bias than an unconstrained model. Typically, these are referred to as “Fair Machine Learning Models”.
+        </aside>
+      </section>
+
+
+      <section>
+        Why does this happen?
+
+        Some reasons include:
+        - statistical biases
+        - data collection biases
+        - proxy labels
+        - underspecified optimisation
+      </section>
+
+      <section>
+        <h3>Fair Machine Learning</h3>
+
+        <section>
+          <ul>
+            <li>Typically defined in terms of classification.</li>
+            <li>Notions of fairness.
+              <ul>
+                <li>Group Fairness</li>
+                <li>Individual Fairness</li>
+              </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <ul>
+            <li>Typically defined in terms of classification.</li>
+            <li>Notions of fairness.
+            <ul>
+              <li>Group Fairness</li>
+              <li>Individual Fairness</li>
+            </ul>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h4>Group Fairness</h4>
+          <p>Demographic Parity: &nbsp;&nbsp;&nbsp; $L = \frac{1}{2} \rho v^2 S C_L$</p>
+
+        </section>
+
+        <section>
+          <h4>Individual Fairness</h4>
+        </section>
+
+      </section>
+
+      <section class="dark-cyan">
+        <p>&nbsp;
+        <p>&nbsp;
+        <p>&nbsp;
+        <p>&nbsp;
+        <h2>Python Tools</h2>
+      </section>
+
+      <section>
+        <h3>Poetry &mdash; Simple, Conflict-free<br> Dependency Management</h3>
+
+        <section>
+          <multi-col>
+            <one-col>
+              <img src="images/poetry.png" alt="poetry logo">
+              <ul>
+                <li>Poetry is a tool for managing Python dependencies
+              </ul>
+            </one-col>
+            <one-col>
+              <ul>
+                <li>Alternative to <code>setup.py</code>
+                <li>Automatically resolves meta-dependencies (dependencies between dependencies)
+                <li>Maintains a lock file that ensures that all people working on the project are locked to the same versions of dependencies
+                <li>Also provides some protection if you forget to activate a venv
+              </ul>
+            </one-col>
+          </multi-col>
+        </section>
+
+        <section>
+          <p><code>pyproject.toml</code> replaces <code>setup.py</code> and also auxiliary <code>.cfg</code> files such as <code>black.cfg</code> and <code>.isort.cfg</code>
+          <p>Install poetry from the website or homebrew
+          <h4>Useful commands</h4>
+          <p><code>poetry install</code> &ndash; install dependencies
+          <p><code>poetry update</code> &ndash; check for dependency updates that won’t break your code
+          <p><code>poetry add &lt;package&gt;</code> &ndash; installs and adds a new dependency (no need to manually code dependencies as required for requirements.txt/setup.py)
+          <p>Analogy (for rustaceans): cargo for python
+
+
+        </section>
+      </section>
+
+      <section>
+        <h3>Hydra &mdash; elegant and flexible configuration</h3>
+
+        <section>
+          <multi-col>
+            <one-col>
+              <p>&nbsp;&nbsp;<img src="images/Hydra-Readme-logo2.svg" alt="hydra logo">
+              <p>&nbsp;
+              <ul>
+                <li>Hydra is a tool for configuring complex applications
+                <li>&ldquo;Complex&rdquo; means something like more than 10 flags
+              </ul>
+            </one-col>
+            <one-col>
+              <ul>
+                <li>Hydra enables configuration via YAML files and allows overriding any configuration value on the commandline
+                <li>Hydra encourages modular configuration
+                  <ul>
+                    <li>E.g. data loading config and model config is separate
+                    <li>Config modules can be swapped out
+                    <li>Supports validation and variable interpolation
+                  </ul>
+              </ul>
+            </one-col>
+          </multi-col>
+        </section>
+
+        <section>
+          <multi-col>
+            <one-col>
+              <ul>
+                <li>Hydra supports <em>multiruns</em> where multiple parameter values are run in a combinatorial fashion
+                <li>Hydra also has plugins that allow for hyperparameter sweeps to be conducted using popular HPO libraries (e.g. Optuna)
+              </ul>
+            </one-col>
+            <one-col>
+              <ul>
+                <li>Hydra can also instantiate Python objects based on configuration values
+              </ul>
+            </one-col>
+          </multi-col>
+        </section>
+      </section>
+
+      <section>
+        <h3>Ray &mdash; effortless parallelism</h3>
+        <multi-col>
+          <one-col>
+            <p><img src="images/ray_header_logo.png" alt="ray logo">
+            <ul>
+              <li>Ray is a tool for easy parallelisation of Python functions
+              <li>It can be used to  a hyperparameter search over multiple GPUs and multiple machines
+            </ul>
+          </one-col>
+          <one-col>
+            <ul>
+              <li>Ray usually parallelises a single Python function, but combined with Hydra, it parallelises your whole application
+              <li>Ray can act as a queue for jobs
+              <li>Ray is GPU-aware and can distribute jobs over multiple machines according to how many GPUs are available on the machines
+            </ul>
+          </one-col>
+        </multi-col>
+      </section>
+
+      <section class="dark-cyan">
+        <p>&nbsp;
+        <p>&nbsp;
+        <p>&nbsp;
+        <p>&nbsp;
+        <h2>ML Tools</h2>
+      </section>
+
+      <section>
+        <h3>PyTorch Lightning &mdash; avoid boilerplate code</h3>
+        <multi-col>
+          <one-col>
+            <p style="text-align: center"><img src="images/PL_logo.svg" alt="pytorch lightning logo" style="width: 3rem">
+            <ul>
+              <li>Lightning provides a set of common abstractions that you see in PyTorch models
+              <li>Gives many things for free
+                <ul>
+                  <li>Logging (e.g. to W&B)
+                  <li>Distributed training
+                    <!-- <ul> -->
+                    <!--   <li>Model or Data parallel -->
+                    <!-- </ul> -->
+                  <li>Automatic LR and batch-size determination
+                </ul>
+            </ul>
+          </one-col>
+          <one-col>
+            <p>Lightning is made up of 3 key components: a DataModule, LightningModule, and a Trainer
+            <ul>
+              <li><strong>DataModule</strong> is a container for train, val and test dataloaders
+              <li><strong>LightningModule</strong> is a <code>nn.Module</code> but you also define the training, val and test steps
+              <li><strong>Trainer</strong> abstracts away the boilerplate code of the training loop
+            </ul>
+          </one-col>
+        </multi-col>
+      </section>
+
+    </div>
+  </div>
+
+  <script type="module" src="setup.js"></script>
