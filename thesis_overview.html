@@ -34,8 +34,8 @@
         <ol type="1">
           <li>Background
             <ol style="list-style-type: lower-alpha">
-              <li>Fair Machine Learning</li>
-              <li>Fair Representations</li>
+              <li>Motivation</li>
+              <li>Fair Machine Learning &amp; Fair Representations</li>
             </ol>
           </li>
           <li>Chapters
@@ -58,233 +58,230 @@
       </section>
 
       <section>
+      <h3>Motivation</h3>
+      <aside class="notes">
+        Machine Learning is a tool that is growing in popularity. There have been a number of high profile successes, and new applications are being regularly identified. These applications include translation (in both image and natural-language domains), pattern recognition and decision-making. Contexts for these applications include Geology, Meteorology, Sports forecasting and Agriculture, to name a few.
 
-        As ML becomes more capable, it's outcomes are becoming more consequential...
+        Because of this success there is a desire to incorporate these systems in more and more situations, including those directly applicable to people. For example, Machine Learning systems have already been applied to police allocation, recidivism prediction, candidate screening and credit approval.
 
-        Wrongfully Accused by an Algorithm
+        On top of the benefits of automated decision making (speed, scale, etc) there is an additional promise to automated decisions. The promise is that instead of many human decision makers, each one biased with their own prejudices, heuristics and experience, we can have a uniform approach. The hope is that by treating everybody the same, then unequal, biased behaviour can be removed.
 
-        Wrongfully Accused by an Algorithm
+        Unfortunately, that's not always the case.
 
-        Police officers raise concerns about 'biased' AI data
+        Recent headlines include:
 
-        <aside class="notes">
-          Machine Learning is a tool that is growing in popularity. There have been a number of high profile successes, and new applications are being regularly identified. These applications include translation (in both image and natural-language domains), pattern recognition and decision-making. Contexts for these applications include Geology, Meteorology, Sports forecasting and Agriculture, to name a few.
-
-          Because of this success there is a desire to incorporate these systems in more and more situations, including those directly applicable to people. For example, Machine Learning systems have already been applied to police allocation, recidivism prediction, candidate screening and credit approval.
-
-          On top of the benefits of automated decision making (speed, scale, etc) there is an additional promise to automated decisions. The promise is that instead of many human decision makers, each one biased with their own prejudices, heuristics and experience, we can have a uniform approach. The hope is that by treating everybody the same, then unequal, biased behaviour can be removed.
-
-          Unfortunately, that's not always the case.
-
-          Recent headlines include:
-
-          Wrongfully Accused by an Algorithm: In what may be the first known case of its kind, a faulty facial recognition match led to a Michigan man’s arrest for a crime he did not commit. -- NYTimes {cite}Hill20
-          Wrongfully Accused by an Algorithm. -- The Guardian {cite}Reu18
-          Police officers raise concerns about 'biased' AI data. -- BBC News {cite}BBC19
-          But how does this happen? A prediction model has to be designed and there are a number of legal and moral obstacles to prevent a group/individual from purposefully designing a biased system. However, even for the best intentioned there are a number of potential problems. Examples of these problems include (but are not limited to):
-
-          The tyranny of the majority: We optimise to be right for the many, at the expense of minority groups.
-          Sampling bias: We don't have representative data of our population.
-          Proxy labels: We don't (or can't) measure what we truly want to measure, so use a related quality as a proxy.
-          Biased data: The recorded human decision was just plain biased.
-          And unfortunately these aren't mutually exclusive.
-
-          An unconstrained machine learning model is susceptible to all of these problems. To face this challenge, the machine learning community has focused on creating a class of learning models that are constrained to exhibit less bias than an unconstrained model. Typically, these are referred to as “Fair Machine Learning Models”.
-        </aside>
+        Wrongfully Accused by an Algorithm: In what may be the first known case of its kind, a faulty facial recognition match led to a Michigan man’s arrest for a crime he did not commit. -- NYTimes {cite}Hill20
+        Wrongfully Accused by an Algorithm. -- The Guardian {cite}Reu18
+        Police officers raise concerns about 'biased' AI data. -- BBC News {cite}BBC19
+        But how does this happen? A prediction model has to be designed and there are a number of legal and moral obstacles to prevent a group/individual from purposefully designing a biased system. However, even for the best intentioned there are a number of potential problems. Examples of these problems include (but are not limited to):
+      </aside>
+        <p></p>
+        <div class="r-stack" style="padding-top: 2.5%">
+          <img src="images/amazon.png" width="50%">
+          <img class="fragment" src="images/pp_mb.png" width="50%" style="transform:rotate(-5deg);">
+          <img class="fragment" src="images/wapo.png" width="50%" style="transform:rotate(5deg);">
+        </div>
       </section>
-
-
       <section>
-        Why does this happen?
-
-        Some reasons include:
-        - statistical biases
-        - data collection biases
-        - proxy labels
-        - underspecified optimisation
-      </section>
-
-      <section>
-        <h3>Fair Machine Learning</h3>
-
         <section>
-          <ul>
-            <li>Typically defined in terms of classification.</li>
-            <li>Notions of fairness.
-              <ul>
-                <li>Group Fairness</li>
-                <li>Individual Fairness</li>
-              </ul>
-            </li>
-          </ul>
-        </section>
-
-        <section>
-          <ul>
-            <li>Typically defined in terms of classification.</li>
-            <li>Notions of fairness.
+          <h3>Motivation</h3>
+          <h4>Why does this happen?</h4>
+          <div style="text-align: left; padding-left: 5%">
+            <p>Some reasons include:</p>
             <ul>
-              <li>Group Fairness</li>
-              <li>Individual Fairness</li>
+              <li><strong>Systematic biases:</strong> Unfair practices are encoded in "upstream" systems.</li>
+              <li><strong>Statistical biases:</strong> We don't have representative data of our population.</li>
+              <li><strong>Proxy Labels:</strong> We don't (or can't) measure what we truly want to measure, so use a related quality as a proxy.</li>
+              <li><strong>Underspecified Objective</strong>: The optimisation target is misjudged.</li>
+              <li>... and many more</li>
             </ul>
-            </li>
-          </ul>
+          </div>
+<!--          <p>An unconstrained machine learning model is susceptible to all of these problems. To face this challenge, the machine learning community has focused on creating a class of learning models that are constrained to exhibit less bias than an unconstrained model. Typically, these are referred to as “Fair Machine Learning Models”.</p>-->
         </section>
-
         <section>
-          <h4>Group Fairness</h4>
-          <p>Demographic Parity: &nbsp;&nbsp;&nbsp; $L = \frac{1}{2} \rho v^2 S C_L$</p>
-
-        </section>
-
-        <section>
-          <h4>Individual Fairness</h4>
-        </section>
-
-      </section>
-
-      <section class="dark-cyan">
-        <p>&nbsp;
-        <p>&nbsp;
-        <p>&nbsp;
-        <p>&nbsp;
-        <h2>Python Tools</h2>
-      </section>
-
-      <section>
-        <h3>Poetry &mdash; Simple, Conflict-free<br> Dependency Management</h3>
-
-        <section>
-          <multi-col>
-            <one-col>
-              <img src="images/poetry.png" alt="poetry logo">
-              <ul>
-                <li>Poetry is a tool for managing Python dependencies
-              </ul>
-            </one-col>
-            <one-col>
-              <ul>
-                <li>Alternative to <code>setup.py</code>
-                <li>Automatically resolves meta-dependencies (dependencies between dependencies)
-                <li>Maintains a lock file that ensures that all people working on the project are locked to the same versions of dependencies
-                <li>Also provides some protection if you forget to activate a venv
-              </ul>
-            </one-col>
-          </multi-col>
-        </section>
-
-        <section>
-          <p><code>pyproject.toml</code> replaces <code>setup.py</code> and also auxiliary <code>.cfg</code> files such as <code>black.cfg</code> and <code>.isort.cfg</code>
-          <p>Install poetry from the website or homebrew
-          <h4>Useful commands</h4>
-          <p><code>poetry install</code> &ndash; install dependencies
-          <p><code>poetry update</code> &ndash; check for dependency updates that won’t break your code
-          <p><code>poetry add &lt;package&gt;</code> &ndash; installs and adds a new dependency (no need to manually code dependencies as required for requirements.txt/setup.py)
-          <p>Analogy (for rustaceans): cargo for python
-
-
+          <img src="images/data_disparities.png" width="55%">
         </section>
       </section>
 
       <section>
-        <h3>Hydra &mdash; elegant and flexible configuration</h3>
-
-        <section>
-          <multi-col>
-            <one-col>
-              <p>&nbsp;&nbsp;<img src="images/Hydra-Readme-logo2.svg" alt="hydra logo">
-              <p>&nbsp;
-              <ul>
-                <li>Hydra is a tool for configuring complex applications
-                <li>&ldquo;Complex&rdquo; means something like more than 10 flags
-              </ul>
-            </one-col>
-            <one-col>
-              <ul>
-                <li>Hydra enables configuration via YAML files and allows overriding any configuration value on the commandline
-                <li>Hydra encourages modular configuration
-                  <ul>
-                    <li>E.g. data loading config and model config is separate
-                    <li>Config modules can be swapped out
-                    <li>Supports validation and variable interpolation
-                  </ul>
-              </ul>
-            </one-col>
-          </multi-col>
-        </section>
-
-        <section>
-          <multi-col>
-            <one-col>
-              <ul>
-                <li>Hydra supports <em>multiruns</em> where multiple parameter values are run in a combinatorial fashion
-                <li>Hydra also has plugins that allow for hyperparameter sweeps to be conducted using popular HPO libraries (e.g. Optuna)
-              </ul>
-            </one-col>
-            <one-col>
-              <ul>
-                <li>Hydra can also instantiate Python objects based on configuration values
-              </ul>
-            </one-col>
-          </multi-col>
-        </section>
-      </section>
-
-      <section>
-        <h3>Ray &mdash; effortless parallelism</h3>
+        <h3>Background</h3>
         <multi-col>
           <one-col>
-            <p><img src="images/ray_header_logo.png" alt="ray logo">
+            <h4>Fair Machine Learning</h4>
             <ul>
-              <li>Ray is a tool for easy parallelisation of Python functions
-              <li>It can be used to  a hyperparameter search over multiple GPUs and multiple machines
-            </ul>
-          </one-col>
-          <one-col>
-            <ul>
-              <li>Ray usually parallelises a single Python function, but combined with Hydra, it parallelises your whole application
-              <li>Ray can act as a queue for jobs
-              <li>Ray is GPU-aware and can distribute jobs over multiple machines according to how many GPUs are available on the machines
-            </ul>
-          </one-col>
-        </multi-col>
-      </section>
-
-      <section class="dark-cyan">
-        <p>&nbsp;
-        <p>&nbsp;
-        <p>&nbsp;
-        <p>&nbsp;
-        <h2>ML Tools</h2>
-      </section>
-
-      <section>
-        <h3>PyTorch Lightning &mdash; avoid boilerplate code</h3>
-        <multi-col>
-          <one-col>
-            <p style="text-align: center"><img src="images/PL_logo.svg" alt="pytorch lightning logo" style="width: 3rem">
-            <ul>
-              <li>Lightning provides a set of common abstractions that you see in PyTorch models
-              <li>Gives many things for free
+              <li>Typically defined in terms of classification e.g.</li>
+              <ul>
+                <li>$f(x) \mapsto y \quad\mathrm{s.t.}\;\,y \perp s$</li>
+              </ul>
+              <li>Notions of fairness.
                 <ul>
-                  <li>Logging (e.g. to W&B)
-                  <li>Distributed training
-                    <!-- <ul> -->
-                    <!--   <li>Model or Data parallel -->
-                    <!-- </ul> -->
-                  <li>Automatic LR and batch-size determination
+                  <li>Group Fairness: Similar performance across demographic groups</li>
+                  <li>Individual Fairness: Similar individuals should be treated similarly</li>
                 </ul>
+              </li>
             </ul>
           </one-col>
           <one-col>
-            <p>Lightning is made up of 3 key components: a DataModule, LightningModule, and a Trainer
+            <h4>Fair Representations</h4>
             <ul>
-              <li><strong>DataModule</strong> is a container for train, val and test dataloaders
-              <li><strong>LightningModule</strong> is a <code>nn.Module</code> but you also define the training, val and test steps
-              <li><strong>Trainer</strong> abstracts away the boilerplate code of the training loop
+              <li>Remains defined in terms of classification, but invariance extended to intermediate step.</li>
+              <ul>
+                <li>$f(x) \mapsto z \quad\mathrm{s.t.}\;\,z \perp s$</li>
+                <li>$g(z) \mapsto y \quad\mathrm{s.t.}\;\,y \perp s$</li>
+              </ul>
+              <li>Reconstructing $x$ from $z$ allows for unsupervised training.</li>
+              <li>Can improve fairness measures for multiple targets.</li>
             </ul>
           </one-col>
         </multi-col>
+      </section>
+
+
+      <section class="dark-cyan">
+        <p>&nbsp;
+        <p>&nbsp;
+        <p>&nbsp;
+        <p>&nbsp;
+        <h2>Chapters</h2>
+      </section>
+
+      <section>
+        <h3>A Novel Use-case for Fair Representations</h3>
+
+        <section>
+          <small>Thomas, Oliver, Miri Zilka, Adrian Weller and Novi Quadrianto.</small>
+          <small>‘An Algorithmic Framework for Positive Action’.</small>
+          <small>Conference: Equity and Access in Algorithms, Mechanisms, and Optimization. EAAMO ’21.</small>
+          <h4>Reconstructing based on Fair Representations</h4>
+          <p>"Similar individals should be treated similarly"</p>
+          <multi-col>
+            <one-col><img src="images/paf_1.png"></one-col>
+            <one-col><img src="images/paf_2.png"></one-col>
+            <one-col><img src="images/paf_3.png"></one-col>
+          </multi-col>
+          <p>If $z$ is independent of $s$, let's reconstruct with other $s$ values.</p>
+        </section>
+        <section>
+          <h4>Positive Action Apporach</h4>
+          <p>Alternative reconstructions are interesting, but what do they tell us?</p>
+          <p>&nbsp;</p>
+          <p>Limited counterfactual question: How would someone have changed if a fundamental attribute such as  $s$ were different?</p>
+          <p>Connection to individual fairness, but ultimately about parity.</p>
+          <p>Positive Action suggested as a remedy for those affected.</p>
+        </section>
+        <section>
+          <h4>Results</h4>
+          <multi-col>
+            <one-col>
+              <p><img src="images/paf_groups.png"></p>
+            </one-col>
+            <one-col>
+              <p><img src="images/paf_table.png"></p>
+            </one-col>
+          </multi-col>
+        </section>
+        <section>
+          <img src="images/paf_model.png" width="50%">
+        </section>
+      </section>
+
+      <section>
+        <h3>Fair Representations in the Data Domain</h3>
+
+        <section>
+          <small>Quadrianto, Novi, Viktoriia Sharmanska and Oliver Thomas.</small>
+          <small>‘Discovering Fair Representations in the Data Domain’.</small>
+          <small>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) '19.</small>
+          <h4>Something Else?</h4>
+          <multi-col>
+            <one-col><img src="images/dfrdd_0.png"></one-col>
+            <one-col><img src="images/dfrdd_1.png"></one-col>
+            <one-col><img src="images/dfrdd_2.png"></one-col>
+          </multi-col>
+          <p>Instead of reconstructing based on $s$, can we map to somewhere inbetween?</p>
+          <p>A fair representation of the data, that stays in the same domain as the data.</p>
+        </section>
+
+        <section>
+          <h4>How?</h4>
+          <p>Decomposition Assumption:</p>
+          <p>Original input = Fair component + Unfair component</p>
+          <p>&nbsp;</p>
+          <p>Constraints:
+          <ol>
+            <li>Fair component must be similar to the original.</li>
+            <li>Fair component must be predictive of $y$.</li>
+            <li>Fair component must be independent of $s$.</li>
+            <li>Unfair component can contain information related to $s$.</li>
+          </ol>
+          </p>
+        </section>
+
+        <section>
+          <h4>Results</h4>
+          <img src="images/dfrdd_table_adult.png" width="40%">
+          <multi-col>
+            <one-col><img src="images/dfrdd_images_0.png"></one-col>
+            <one-col><img src="images/dfrdd_images.png"></one-col>
+          </multi-col>
+        </section>
+        
+        <section>
+          <img src="images/architecture.png">
+        </section>
+        
+        <section>
+          <h4>Addendum</h4>
+          <p>Are there some improvements that we can make? Yes.</p>
+          <ol>
+            <li>Remove $y$-loss term.</li>
+            <li>Adversary and Reconstruction term operate on range of residuals.</li>
+          </ol>
+          <multi-col>
+            <one-col>
+              <p><img src="images/dfrdd_addendum_cmnist.png" width="100%"></p>
+            </one-col>
+            <one-col>
+              <p>&nbsp;</p>
+              <p>An improvement, but still limited due to problem formulation...</p>
+              <p>Maybe a different approach is needed?</p>
+            </one-col>
+          </multi-col>
+        </section>
+      </section>
+
+      <section>
+        <h3>One Step Further</h3>
+
+        <section>
+          <small>Kehrenberg, Thomas, Myles Bartlett, Oliver Thomas and Novi Quadrianto.</small>
+          <small>‘Null-Sampling for Interpretable and Fair Representations’.</small>
+          <small>European Conference on Computer Vision (ECCV) '20.</small>
+          <h4>Invertibility</h4>
+          <multi-col>
+            <one-col><img src="images/nifr_0.png"></one-col>
+            <one-col><img src="images/nifr_1.png"></one-col>
+          </multi-col>
+          <p>Use the <em>invertible</em> property of Normalizing Flow models to solve previous issues.</p>
+        </section>
+        <section>
+          <img src="images/nifr_arch.png">
+        </section>
+        <section>
+          <h4>Results</h4>
+          <multi-col>
+            <one-col><p><img src="images/nifr_multilabel.png"></p></one-col>
+            <one-col><p><img src="images/nifr_images.png"></p></one-col>
+          </multi-col>
+        </section>
+      </section>
+
+      <section class="dark-cyan">
+        <p>&nbsp;
+        <p>&nbsp;
+        <p>&nbsp;
+        <h2>Conclusion &amp;</h2>
+        <h2>Future Works</h2>
       </section>
 
     </div>
