@@ -45,6 +45,7 @@
               <li>One Step Further</li>
             </ol>
           </li>
+          <li>Contributions</li>
           <li>Conclusion</li>
         </ol>
       </section>
@@ -153,35 +154,58 @@
           <small>‘An Algorithmic Framework for Positive Action’.</small>
           <small>Conference: Equity and Access in Algorithms, Mechanisms, and Optimization. EAAMO ’21.</small>
           <h4>Reconstructing based on Fair Representations</h4>
-          <p>"Similar individals should be treated similarly"</p>
-          <multi-col>
-            <one-col><img src="images/paf_1.png"></one-col>
-            <one-col><img src="images/paf_2.png"></one-col>
-            <one-col><img src="images/paf_3.png"></one-col>
-          </multi-col>
-          <p>If $z$ is independent of $s$, let's reconstruct with other $s$ values.</p>
+<!--          <p>"Similar individals should be treated similarly"</p>-->
+          <div class="r-stack">
+<!--            <img class="fragment fade-out" data-fragment-index="0" src="images/viva/diagrams/diagrams.001.png" style="position: relative; top: -25%; height: 55%; width: 50%; object-fit: cover;">-->
+<!--            <img class="fragment current-visible" data-fragment-index="0" src="images/viva/diagrams/diagrams.002.png" style="position: relative; top: -25%; height: 55%; width: 50%; object-fit: cover;">-->
+            <img class="fragment fade-out" data-fragment-index="0" src="images/viva/diagrams/diagrams.003.png" style="position: relative; top: -20%; height: 55%; width: 50%; object-fit: cover;">
+            <img class="fragment current-visible" data-fragment-index="0" src="images/viva/diagrams/diagrams.004.png" style="position: relative; top: -20%; height: 60%; width: 35%; object-fit: cover;">
+            <multi-col class="fragment current-visible">
+<!--              <one-col>-->
+<!--                <figure style="position: relative; top: -40%">-->
+<!--                  <img src="images/viva/diagrams/diagrams.001.png">-->
+<!--                  <figcaption style="text-align: center; margin-top: -20%;"><small>Ideal Fair Representation</small></figcaption>-->
+<!--                </figure>-->
+<!--              </one-col>-->
+<!--              <one-col>-->
+<!--                <figure style="position: relative; top: -40%">-->
+<!--                  <img src="images/viva/diagrams/diagrams.002.png">-->
+<!--                  <figcaption style="text-align: center; margin-top: -20%;"><small>First Approaches Guided by Supervision</small></figcaption>-->
+<!--                </figure>-->
+<!--              </one-col>-->
+              <one-col>
+                <figure style="position: relative; top: -30%; overflow: hidden; alignment: center">
+                  <img src="images/viva/diagrams/diagrams.003.png" height="65%" width="60%" style="object-fit: cover; display: block; margin: auto;">
+                  <figcaption style="text-align: center; margin-top: 0%;"><small>Introduction of (Semi) Supervised Fair Representations</small></figcaption>
+                </figure>
+              </one-col>
+              <one-col>
+                <figure style="position: relative; top: -30%; overflow: hidden; alignment: center">
+                  <img src="images/viva/diagrams/diagrams.004.png" height="65%" width="60%" style="object-fit: cover; display: block; margin: auto;">
+                  <figcaption style="text-align: center; margin-top: 0%;"><small>If $S$ is absent from $Z$, Then Free During Reconstruction</small></figcaption>
+                </figure>
+              </one-col>
+            </multi-col>
+          </div>
         </section>
+<!--        <section>-->
+<!--          <h4>Positive Action Apporach</h4>-->
+<!--          <p>Alternative reconstructions are interesting, but what do they tell us?</p>-->
+<!--          <p>&nbsp;</p>-->
+<!--          <p>Limited counterfactual question: How would someone have changed if a fundamental attribute such as  $s$ were different?</p>-->
+<!--          <p>Connection to individual fairness, but ultimately about parity.</p>-->
+<!--          <p>Positive Action suggested as a remedy for those affected.</p>-->
+<!--        </section>-->
         <section>
-          <h4>Positive Action Apporach</h4>
-          <p>Alternative reconstructions are interesting, but what do they tell us?</p>
-          <p>&nbsp;</p>
-          <p>Limited counterfactual question: How would someone have changed if a fundamental attribute such as  $s$ were different?</p>
-          <p>Connection to individual fairness, but ultimately about parity.</p>
-          <p>Positive Action suggested as a remedy for those affected.</p>
+          <img src="images/paf_model.png" width="50%">
         </section>
         <section>
           <h4>Results</h4>
-          <multi-col>
-            <one-col>
-              <p><img src="images/paf_groups.png"></p>
-            </one-col>
-            <one-col>
-              <p><img src="images/paf_table.png"></p>
-            </one-col>
-          </multi-col>
+          <img src="images/paf_groups.png" style="max-height: 60%;">
         </section>
         <section>
-          <img src="images/paf_model.png" width="50%">
+          <h4>Results</h4>
+          <img src="images/paf_table.png" style="max-height: 60%;">
         </section>
       </section>
 
@@ -193,60 +217,114 @@
           <small>‘Discovering Fair Representations in the Data Domain’.</small>
           <small>IEEE Conference on Computer Vision and Pattern Recognition (CVPR) '19.</small>
           <h4>Something Else?</h4>
-          <multi-col>
-            <one-col><img src="images/dfrdd_0.png"></one-col>
-            <one-col><img src="images/dfrdd_1.png"></one-col>
-            <one-col><img src="images/dfrdd_2.png"></one-col>
-          </multi-col>
-          <p>Instead of reconstructing based on $s$, can we map to somewhere inbetween?</p>
-          <p>A fair representation of the data, that stays in the same domain as the data.</p>
+
+          <div class="r-stack">
+            <img class="fragment fade-out" data-fragment-index="0" src="images/viva/diagrams/diagrams.004.png" style="position: relative; top: -10%; height: 75%; width: 35%; object-fit: cover;">
+            <img class="fragment current-visible" data-fragment-index="0" src="images/viva/diagrams/diagrams.005.png" style="position: relative; top: -10%; height: 75%; width: 35%; object-fit: cover;">
+            <img class="fragment current-visible" src="images/viva/diagrams/diagrams.006.png" style="position: relative; top: -10%; height: 75%; width: 35%; object-fit: cover;">
+            <multi-col class="fragment current-visible">
+              <one-col>
+                <figure style="position: relative; top: -20%; overflow: hidden; alignment: center">
+                  <img src="images/viva/diagrams/diagrams.004.png" height="65%" width="100%" style="object-fit: cover; display: block; margin: auto;">
+                  <figcaption style="text-align: center; margin-top: 0%;"><small>One Reconstruction per $S$</small></figcaption>
+                </figure>
+              </one-col>
+              <one-col>
+                <figure style="position: relative; top: -20%; overflow: hidden; alignment: center">
+                  <img src="images/viva/diagrams/diagrams.005.png" height="65%" width="100%" style="object-fit: cover; display: block; margin: auto;">
+                  <figcaption style="text-align: center; margin-top: 0%;"><small>Instead, map to 1 non-defined $S$</small></figcaption>
+                </figure>
+              </one-col>
+              <one-col>
+                <figure style="position: relative; top: -20%; overflow: hidden; alignment: center">
+                  <img src="images/viva/diagrams/diagrams.006.png" height="65%" width="100%" style="object-fit: cover; display: block; margin: auto;">
+                  <figcaption style="text-align: center; margin-top: 0%;"><small>Acheieved with decomposition assumption</small></figcaption>
+                </figure>
+              </one-col>
+            </multi-col>
+          </div>
+
+<!--          <multi-col>-->
+<!--            <one-col><img src="images/dfrdd_0.png"></one-col>-->
+<!--            <one-col><img src="images/dfrdd_1.png"></one-col>-->
+<!--            <one-col><img src="images/dfrdd_2.png"></one-col>-->
+<!--          </multi-col>-->
+<!--          <p>Instead of reconstructing based on $s$, can we map to somewhere inbetween?</p>-->
+<!--          <p>A fair representation of the data, that stays in the same domain as the data.</p>-->
         </section>
 
         <section>
-          <h4>How?</h4>
-          <p>Decomposition Assumption:</p>
+          <h4>Decomposition Assumption:</h4>
           <p>Original input = Fair component + Unfair component</p>
-          <p>&nbsp;</p>
-          <p>Constraints:
+          <img src="images/viva/additive_decomp.png" width="40%">
           <ol>
             <li>Fair component must be similar to the original.</li>
             <li>Fair component must be predictive of $y$.</li>
             <li>Fair component must be independent of $s$.</li>
             <li>Unfair component can contain information related to $s$.</li>
           </ol>
-          </p>
         </section>
 
         <section>
-          <h4>Results</h4>
-          <img src="images/dfrdd_table_adult.png" width="40%">
+          <img src="images/dfrdd_images_0.png" width="50%">
           <multi-col>
-            <one-col><img src="images/dfrdd_images_0.png"></one-col>
-            <one-col><img src="images/dfrdd_images.png"></one-col>
+            <one-col>
+              <img src="images/dfrdd_images.png">
+            </one-col>
+            <one-col>
+              <img src="images/dfrdd_table_adult.png" height="50%">
+            </one-col>
           </multi-col>
         </section>
         
+        <section>
+          <h3>Addendum</h3>
+          <p>Are there some improvements that we can make? Yes.</p>
+          <div class="r-stack">
+            <img class="fragment fade-out" data-fragment-index="0" src="images/viva/diagrams/diagrams.006.png" style="position: relative; top: -10%; height: 75%; width: 35%; object-fit: cover;">
+            <img class="fragment current-visible" data-fragment-index="0" src="images/viva/diagrams/diagrams.007.png" style="position: relative; top: -10%; height: 75%; width: 35%; object-fit: cover;">
+          </div>
+        </section>
+
+        <section>
+<!--          <h3>Addendum</h3>-->
+<!--          <p>Are there some improvements that we can make? Yes.</p>-->
+<!--          <ol>-->
+<!--            <li>Remove $y$-loss term.</li>-->
+<!--            <li>Adversary and Reconstruction term operate on range of residuals.</li>-->
+<!--          </ol>-->
+<!--          <multi-col>-->
+<!--            <one-col>-->
+          <multi-col>
+            <one-col>
+              <figure style="position: relative; overflow: hidden; alignment: center">
+                <img src="images/viva/pre.png" width="100%">
+                <figcaption style="text-align: center">Original Images</figcaption>
+              </figure>
+            </one-col>
+            <one-col>
+              <figure style="position: relative; overflow: hidden; alignment: center">
+                <img src="images/viva/post.png" width="100%">
+                <figcaption style="text-align: center">Updated Translation</figcaption>
+              </figure>
+            </one-col>
+          </multi-col>
+          <p>Model has little compression, smoothing effect due to objective. However, very unstable, practically, difficult to rely on.</p>
+
+<!--            </one-col>-->
+<!--            <one-col>-->
+
+<!--            </one-col>-->
+<!--            <one-col>-->
+<!--              <p>&nbsp;</p>-->
+<!--              <p>An improvement, but still limited due to problem formulation...</p>-->
+<!--              <p>Maybe a different approach is needed?</p>-->
+<!--            </one-col>-->
+<!--          </multi-col>-->
+        </section>
+
         <section>
           <img src="images/architecture.png">
-        </section>
-        
-        <section>
-          <h4>Addendum</h4>
-          <p>Are there some improvements that we can make? Yes.</p>
-          <ol>
-            <li>Remove $y$-loss term.</li>
-            <li>Adversary and Reconstruction term operate on range of residuals.</li>
-          </ol>
-          <multi-col>
-            <one-col>
-              <p><img src="images/dfrdd_addendum_cmnist.png" width="100%"></p>
-            </one-col>
-            <one-col>
-              <p>&nbsp;</p>
-              <p>An improvement, but still limited due to problem formulation...</p>
-              <p>Maybe a different approach is needed?</p>
-            </one-col>
-          </multi-col>
         </section>
       </section>
 
@@ -257,23 +335,150 @@
           <small>Kehrenberg, Thomas, Myles Bartlett, Oliver Thomas and Novi Quadrianto.</small>
           <small>‘Null-Sampling for Interpretable and Fair Representations’.</small>
           <small>European Conference on Computer Vision (ECCV) '20.</small>
-          <h4>Invertibility</h4>
-          <multi-col>
-            <one-col><img src="images/nifr_0.png"></one-col>
-            <one-col><img src="images/nifr_1.png"></one-col>
-          </multi-col>
-          <p>Use the <em>invertible</em> property of Normalizing Flow models to solve previous issues.</p>
+          <h4>Conditional VAE</h4>
+          <div class="r-stack">
+            <img class="fragment fade-out" data-fragment-index="0" src="images/viva/diagrams/diagrams.007.png" style="position: relative; top: -25%; height: 55%; width: 35%; object-fit: cover;">
+            <img class="fragment current-visible" data-fragment-index="0" src="images/viva/diagrams/diagrams.008.png" style="position: relative; top: -25%; height: 55%; width: 35%; object-fit: cover;">
+            <multi-col class="fragment current-visible">
+              <one-col>
+                <figure style="position: relative; top: -10%; overflow: hidden; alignment: center; height: 100%;">
+                  <img src="images/viva/diagrams/diagrams.007.png" height="55%" width="100%" style="object-fit: cover; display: block; margin: auto;">
+                  <figcaption style="text-align: center; margin-top: 0%;"><small>From simple decomposition...</small></figcaption>
+                </figure>
+              </one-col>
+              <one-col>
+                <figure style="position: relative; top: -10%; overflow: hidden; alignment: center; height: 100%;">
+                  <img src="images/viva/diagrams/diagrams.008.png" height="55%" width="100%" style="object-fit: cover; display: block; margin: auto;">
+                  <figcaption style="text-align: center; margin-top: 0%;"><small>To a learned relationship</small></figcaption>
+                </figure>
+              </one-col>
+            </multi-col>
+          </div>
         </section>
+
         <section>
-          <img src="images/nifr_arch.png">
+          <multi-col>
+            <one-col>
+              <figure style="position: relative; overflow: hidden; alignment: center">
+                <img src="images/viva/cvae_pre.png" width="100%">
+                <figcaption style="text-align: center">Original Images</figcaption>
+              </figure>
+            </one-col>
+            <one-col>
+              <figure style="position: relative; overflow: hidden; alignment: center">
+                <img src="images/viva/cvae_post.png" width="100%">
+                <figcaption style="text-align: center">cVAE Translation</figcaption>
+              </figure>
+            </one-col>
+          </multi-col>
         </section>
+
+        <section>
+          <figure style="height: 60%">
+            <img src="images/viva/cvae_diagram_u.png">
+            <figcaption>cVAE model</figcaption>
+          </figure>
+        </section>
+
+        <section>
+          <multi-col>
+            <one-col style="text-align: center;"><img src="images/viva/vae_x_original.png" width="70%"></one-col>
+            <one-col style="text-align: center"><img src="images/viva/vae_recon_y.png" width="70%"></one-col>
+            <one-col style="text-align: center"><img src="images/viva/vae_recon_s.png" width="70%"></one-col>
+          </multi-col>
+        </section>
+
+        <section>
+          <multi-col>
+            <one-col style="text-align: center;"><img src="images/viva/diagrams/viva_diagrams.001.png" width="53%"></one-col>
+            <one-col style="text-align: center"><img src="images/viva/diagrams/viva_diagrams.002.png" width="52%"></one-col>
+          </multi-col>
+        </section>
+      </section>
+
+      <section>
+        <h3>NIFR (INN-based model)</h3>
+        <section>
+          <p>Use the <em>invertible</em> property of Normalizing Flow models to solve previous issues.</p>
+          <h4>Invertibility to the rescue</h4>
+          <div class="r-stack">
+            <img class="fragment fade-out" data-fragment-index="0" src="images/viva/diagrams/diagrams.008.png" style="position: relative; top: -25%; height: 55%; width: 35%; object-fit: cover;">
+            <img class="fragment current-visible" data-fragment-index="0" src="images/viva/diagrams/diagrams.009.png" style="position: relative; top: -25%; height: 55%; width: 35%; object-fit: cover;">
+            <multi-col class="fragment current-visible">
+              <one-col>
+                <figure style="position: relative; top: -10%; overflow: hidden; alignment: center; height: 100%;">
+                  <img src="images/viva/diagrams/diagrams.008.png" height="55%" width="100%" style="object-fit: cover; display: block; margin: auto;">
+                  <figcaption style="text-align: center; margin-top: 0%;"><small>The VAE model is a lossy translation</small></figcaption>
+                </figure>
+              </one-col>
+              <one-col>
+                <figure style="position: relative; top: -10%; overflow: hidden; alignment: center; height: 100%;">
+                  <img src="images/viva/diagrams/diagrams.009.png" height="55%" width="100%" style="object-fit: cover; display: block; margin: auto;">
+                  <figcaption style="text-align: center; margin-top: 0%;"><small>Invertibility solves this problem</small></figcaption>
+                </figure>
+              </one-col>
+            </multi-col>
+          </div>
+        </section>
+
+        <section>
+          <multi-col>
+            <one-col style="text-align: center;"><img src="images/viva/train_original_x_2.png" width="70%"></one-col>
+            <one-col style="text-align: center"><img src="images/viva/train_reconstruction_y_2.png" width="70%"></one-col>
+            <one-col style="text-align: center"><img src="images/viva/train_reconstruction_s_2.png" width="70%"></one-col>
+          </multi-col>
+        </section>
+
         <section>
           <h4>Results</h4>
-          <multi-col>
-            <one-col><p><img src="images/nifr_multilabel.png"></p></one-col>
-            <one-col><p><img src="images/nifr_images.png"></p></one-col>
-          </multi-col>
+          <one-col><p><img src="images/nifr_multilabel.png"></p></one-col>
         </section>
+
+        <section>
+          <figure style="height: 60%">
+            <img src="images/viva/inn_diagram_u.png">
+            <figcaption>INN model</figcaption>
+          </figure>
+        </section>
+      </section>
+
+      <section class="dark-cyan">
+        <p>&nbsp;
+        <p>&nbsp;
+        <p>&nbsp;
+        <p>&nbsp;
+        <h2>Contributions</h2>
+      </section>
+
+      <section>
+        <figure>
+          <img src="images/viva/elephant-room.jpeg" width="70%">
+          <figcaption><small>Image from deviantart.com</small></figcaption>
+        </figure>
+      </section>
+
+      <section>
+        <h3>Contributions</h3>
+        <p></p>
+        <ol>
+          <li>EAAMO '21
+            <ul>
+              <li>Primary contributor to all aspects.</li>
+            </ul>
+          </li>
+          <li>CVPR '19
+            <ul>
+              <li>Main investigator.</li>
+              <li>Writing Code and Running Experiments</li>
+            </ul>
+          </li>
+          <li>ECCV '20
+            <ul>
+              <li>Lead from fair representation perspective and experiment designer.</li>
+              <li>Colleagues focussed on using additional data/covariate shift aspect.</li>
+            </ul>
+          </li>
+        </ol>
       </section>
 
       <section class="dark-cyan">
@@ -282,6 +487,24 @@
         <p>&nbsp;
         <h2>Conclusion &amp;</h2>
         <h2>Future Works</h2>
+      </section>
+
+      <section>
+        <h3>Main Takeaway</h3>
+        <p>Fair Representations can be useful for more than their original intention.</p>
+        <p>Greater insight possible without significant performance penalty.</p>
+        <h3>Future Works</h3>
+        <p>Extending other types of models: Diffusion?</p>
+        <p>Other approaches for insight? Potentially a Bayesian approach.</p>
+        <p>Incorporating other modalities.</p>
+      </section>
+
+      <section class="dark-cyan">
+        <p>&nbsp;
+        <p>&nbsp;
+        <p>&nbsp;
+        <p>&nbsp;
+        <h2>Thank you!</h2>
       </section>
 
     </div>
