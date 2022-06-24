@@ -430,3 +430,21 @@ one-col:not(:first-child) {
   top: -50%;
   left: -50%;
 }
+
+/*********************************************
+ * COLOURS
+ *********************************************/
+mark.red {
+  color:#ff0000;
+  background: none;
+}
+
+mark.blue {
+  color: #063ae8;
+  background: none;
+}
+
+mark.green {
+  color: #106b06;
+  background: none;
+}
